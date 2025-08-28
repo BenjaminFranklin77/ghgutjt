@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Mhashe!!!🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #000022, #220022 70%);
+      color: #fff;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      overflow: hidden;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3.2em;
+      margin-top: 30px;
+      text-shadow: 2px 2px 15px hotpink;
+    }
+    p {
+      font-size: 1.6em;
+      margin: 10px 0;
+    }
+
+    /* 🌈 Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: red;
+      top: -10px;
+      animation: fall linear forwards;
+      opacity: 0.8;
+      border-radius: 2px;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+    /* ✨ Twinkling stars */
+    .star {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* ❤️ Floating hearts */
+    .heart {
+      position: fixed;
+      color: red;
+      font-size: 24px;
+      animation: floatUp 6s linear forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    /* ⌨️ Typing effect */
+    .typing {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #ffccff;
+      text-shadow: 0 0 10px #ff66cc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      width: 0;
+      animation: typing 5s steps(50, end) forwards, blink 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* 🎁 Hidden Surprise */
+    #surprise {
+      display: none;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: #ff69b4;
+      text-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4, 0 0 60px #ff1493;
+      animation: glow 1.5s infinite alternate;
+      z-index: 9999;
+    }
+    @keyframes glow {
+      from { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Mhashe!!! 🎉</h1>
+  <p>May your day be filled with love, joy & magic ✨</p>
+  <p class="typing">You are the most special part of my life ❤️</p>
+  <p class="typing">"To my favorite person, May your special day be filled with laughter, joy, and all the love you deserve"</p>
+  <p class="typing">"Cheers to another year of us making amazing memories together! You are truly the best anyone could ask for". ❤️</p>
+  <p class="typing">🌸 Happy Birthday to the most amazing girl, Mhashae! 🌸</p>
+  <p class="typing">You bring joy, laughter, and light everywhere you go, and I feel so lucky to have you in my life.</p>
+  <p class="typing">May this year bring you endless happiness, success, and all the love you truly deserve. Keep shining like the star you are, </p>
+  <p class="typing">because the world is brighter with you in it. 🎂✨❤️</p>
+  <p class="typing">Just Enjoy Your Day Happily and Smiling</p>
+  <p class="typing">Remember To Stay Happy Through Out Your Life Because Seeing You Happy Makes Your Parents ,,,, Us Feel Happy!!</p>
+
+  <!-- 🎁 Hidden Surprise -->
+  <div id="surprise">Always be happy and Always be Mine only!! ❤️</div>
+
+  <script>
+    // 🌈 Confetti
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
+      confetti.style.animationDuration = (3 + Math.random()*3) + "s";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 6000);
+    }
+    setInterval(createConfetti, 200);
+
+    // ✨ Stars
+    function createStars() {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (2 + Math.random()*2) + "s";
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 4000);
+    }
+    setInterval(createStars, 150);
+
+    // ❤️ Hearts
+    function createHearts() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      heart.style.animationDuration = (4 + Math.random()*3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHearts, 600);
+
+    // 🎁 Double-click Surprise (disappears after 3s)
+    document.body.ondblclick = () => {
+      const surprise = document.getElementById("surprise");
+      surprise.style.display = "block";
+      setTimeout(() => {
+        surprise.style.display = "none";
+      }, 3000);
+    };
+  </script>
+</body>
+</html>
